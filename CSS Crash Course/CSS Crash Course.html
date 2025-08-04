@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="crashstyle.css" />
+    <title>CSS Explanations</title>
+  </head>
+
+  <body>
+    <h1>CSS Crash Course</h1>
+    <div>
+      <h2>Types of CSS</h2>
+      <ul>
+        <li><b>Inline</b> - Style directly in the HTML element</li>
+        <li><b>Internal</b> - Use &lt;style&gt; tag within the HTML file</li>
+        <li><b>External</b> - Use a CSS file</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Common Properties</h2>
+      <ul>
+        <li>
+          <b>color</b> - Sets the text color. Use RGBa to set color and opacity.
+        </li>
+        <li>
+          <b>background-color</b> - Sets the background color. Use RGBa to set
+          color and opacity.
+        </li>
+        <li><b>width</b> - Sets the width of an element</li>
+        <ul>
+          <li>
+            <b><i>NEVER</i></b> set hardcode unless absolutely necessary.
+          </li>
+          <li>Set to 100%. Will resize automatically.</li>
+          <li>
+            &lt;max-width&gt; will help with horizontal re-sizing to a specific
+            size.
+          </li>
+        </ul>
+        <li><b>height</b> - Sets the height of an element</li>
+        <ul>
+          <li>
+            <b><i>NEVER</i></b> set hardcode unless absolutely necessary.
+          </li>
+          <li>Set to 100vh or vw. Will resize automatically.</li>
+          <li>
+            &lt;max-height&gt; will help with vertical re-sizing to a specific
+            size.
+          </li>
+        </ul>
+        <li><b>border</b> - Sets the border of an element</li>
+        <ul>
+          <li>
+            <b><i>ALWAYS</i></b> use the short-hand version: border: "size"px
+            solid "color"
+          </li>
+        </ul>
+        <li>
+          <b>padding</b> - Sets the space between the content and the border of
+          an element
+        </li>
+        <ul>
+          <li>Use the short-hand version: padding: "size"px</li>
+        </ul>
+        <li><b>margin</b> - Sets the space outside the border of an element</li>
+        <ul>
+          <li>Use the short-hand version: margin: "size"px</li>
+        </ul>
+        <li><b>display</b> - Sets how an element is displayed</li>
+        <ul>
+          <li>Use the short-hand version: display: "type"</li>
+        </ul>
+        <li><b>font-size</b> - Sets the size of the font</li>
+        <li><b>font-weight</b> - Sets the weight (boldness) of the font</li>
+        <li>
+          <b>font-family</b> - Sets the font family for text. Use Google fonts.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Specificity</h2>
+      <b>Definition: </b> The prioritization of the styling. Think - order of
+      operations.
+      <ul>
+        <li>
+          <b>Class:</b> Helps target what we want. Type a "." in front of the
+          class to target the class, not HTML element. Classes have a higher
+          priority than just HTML elements.
+        </li>
+        <li>
+          <b>ID:</b> A stronger-priority. Can only have one "ID" per HTML. Can
+          have multiple in CSS.
+        </li>
+        <li>
+          <b>!important:</b> Highest/Stronges-priority. Do NOT use unless
+          absolutely necessary.
+        </li>
+      </ul>
+      <h4>Order of specificity (lowest to highest):</h4>
+      <ul>
+        <li><b>Tag Name:</b></li>
+        <ul>
+          <li>Example: &lt;div&gt; &lt;forward slash (/)div&gt;</li>
+          <li>CSS: div {color: red;}</li>
+        </ul>
+        <li><b>Class</b></li>
+        <ul>
+          <li>Example: &lt;div class="red"&gt; &lt;forward slash (/)div&gt;</li>
+          <li>CSS: .red {color: red;}</li>
+        </ul>
+        <li><b>ID</b></li>
+        <ul>
+          <li>Example: &lt;div id="home"&gt; &lt;forward slash (/)div&gt;</li>
+          <li>CSS: #home {color: red;}</li>
+        </ul>
+        <li><b>!important</b></li>
+        <ul>
+          <li>Example: &lt;div class="red"&gt; &lt;(/)div&gt;</li>
+          <li>CSS: .red {color: red !important;}</li>
+        </ul>
+      </ul>
+    </div>
+    <div>
+      <h2>Box Model</h2>
+      <p>
+        The box model is a way to visualize the structure of an element in CSS.
+        It consists of the content, padding, border, and margin. Order is very
+        important.
+      </p>
+      <ul>
+        <li><b>Content:</b> The actual content of the element.</li>
+        <li><b>Padding:</b> Space between the content and the border.</li>
+        <li><b>Border:</b> The line surrounding the padding.</li>
+        <li><b>Margin:</b> Space outside the border.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Box Model Example</h3>
+      <p>This is an example of the box model.</p>
+    </div>
+    <div>
+      <h2>Complex Properties</h2>
+      <ul>
+        <li><b>Display</b></li>
+        <ul>
+          <li>
+            block - Takes up the full width of the parent element. Starts on a
+            new line.
+          </li>
+          <ul>
+            <li>Examples:</li>
+            <ol>
+              <li>&lt;div&gt; &lt;/div&gt; or;</li>
+              <li>&lt;h1&gt; &lt;/h1&gt;</li>
+            </ol>
+          </ul>
+          <li>
+            inline - Takes up only the width of the element. Does not allow for
+            adjustments in height or width. Does not start on a new line.
+          </li>
+          <ul>
+            <li>Examples:</li>
+            <ol>
+              <li>&lt;span&gt; &lt;/span&gt; or;</li>
+              <li>&lt;a&gt; &lt;/a&gt;</li>
+            </ol>
+          </ul>
+        </ul>
+        <li><b>Position</b></li>
+        <ul>
+          <li>
+            static - Default position. Elements are positioned according to the
+            normal flow of the document.
+          </li>
+          <li>
+            relative - Positioned relative to its normal position. Can be moved
+            using top, right, bottom, and left properties.
+          </li>
+          <li>
+            absolute - Positioned relative to the nearest positioned ancestor
+            (not static). Can be moved using top, right, bottom, and left
+            properties.
+          </li>
+          <li>
+            fixed - Positioned relative to the viewport. Does not move when
+            scrolling.
+          </li>
+          <li>
+            sticky - A hybrid of relative and fixed. It behaves like relative
+            until a certain point, then becomes fixed.
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div>
+      <h2>Media Queries</h2>
+      <p>
+        Media queries are used to apply different styles based on the device's
+        characteristics, such as screen size or orientation. They allow for
+        responsive design.
+      </p>
+      <p>Common Breakpoints:</p>
+      <ul>
+        <li>576px - Mobile devices</li>
+        <li>768px - Tablets</li>
+        <li>992px - Small laptops</li>
+        <li>1200px - Desktops</li>
+      </ul>
+      <p>
+        See <a href="Media%20Queries.html">Media Queries</a> for more details.
+      </p>
+    </div>
+    <div>
+      <h2>Extras</h2>
+      <p>
+        CSS is a powerful tool for styling web pages. It allows for a wide range
+        of customization and can be used to create visually appealing designs.
+        Remember to keep your code organized and use comments to explain your
+        styles.
+      </p>
+      <p>Some of these examples are:</p>
+      <ul>
+        <li>Pseudo Selectors</li>
+        <ol>
+          <li>After</li>
+          <li>Before</li>
+        </ol>
+        <li>
+          Pseudo Classes: Used to style an element based on its state, such as
+          when it is hovered over or focused.
+        </li>
+        <ol>
+          <li>Hover</li>
+          <li>Focus</li>
+          <li>Active</li>
+        </ol>
+        <li>
+          Pseudo Elements: Used to style a specific part of an element, such as
+          the first line or first letter.
+        </li>
+        <ol>
+          <li>First Line</li>
+          <li>First Letter</li>
+        </ol>
+        <li>Animations</li>
+        <ol>
+          <li>Keyframes</li>
+          <li>Transitions</li>
+        </ol>
+        <li>BEM</li>
+        <ol>
+          <li>Block Element Modifier</li>
+          <li>Helps with organization and readability</li>
+        </ol>
+      </ul>
+      See <a href="Pseudo.html">Pseudo Classes</a> for examples.
+    </div>
+    <div>
+      <h2>Resources</h2>
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+            MDN Web Docs</a
+          >
+          - Comprehensive documentation on CSS.
+        </li>
+        <li>
+          <a href="https://css-tricks.com/">CSS-Tricks</a> - Articles and guides
+          on CSS techniques.
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/">W3Schools</a> - Tutorials and
+          references for CSS.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>Flexbox Layout</h2>
+      <p>
+        Flexbox is a layout model that allows for responsive design and easy
+        alignment of elements. It provides a more efficient way to lay out,
+        align, and distribute space among items in a container.
+      </p>
+      <p>Use 'display: flex;' to make the adjustments.</p>
+      <ul>
+        <li>flex-direction</li>
+        <ol>
+          <li>row</li>
+          <li>column</li>
+        </ol>
+        <li>align-items - vertical aligntment</li>
+        <ol>
+          <li>flex-start</li>
+          <li>flex-end</li>
+          <li>center</li>
+          <li>stretch</li>
+          </ol>
+        <li>justify-content - horizontal alignment</li>
+        <ol>
+          <li>flex-start</li>
+          <li>flex-end</li>
+          <li>center</li>
+          <li>space-between</li>
+          <li>space-around</li>
+        </ol>
+      </ul>
+      <p><i>Justify-content and align-items are used together!</i></p>
+      <p> If flex-direction is set to column, justify-content and align-items switch roles.</p>
+    </div>
+  </body>
+</html>

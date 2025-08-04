@@ -1,0 +1,40 @@
+div {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pseudo1::after {
+content: "Frontend Simplified";
+}
+
+.pseudo2::before {
+content: "CSS Crash Course for";
+}
+
+.pseudo3:hover {
+color: blue;
+background-color: red;
+}
+
+button {
+    animation: float 2s infinite alternate;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+background-color: black;    
+color: white;
+}
+
+@keyframes float {
+    0%{
+transform: translateY(0);
+    }
+    100% {
+transform: translateY(10px);
+    }
+}
+
+.nav__link--active {
+    color: green;
+    font-weight: bold;
+}
